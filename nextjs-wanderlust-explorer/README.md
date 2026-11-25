@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wanderlust Explorer
 
-## Getting Started
+Aplicación web para descubrir, filtrar y guardar experiencias de viaje. Incluye 100 experiencias y cinco páginas: inicio, explorador, detalle, favoritos y perfil.
 
-First, run the development server:
+## Funcionalidades
+
+- Búsqueda por título con expresión regular case-insensitive.
+- Filtros de categoría y destino combinables con la búsqueda y sincronizados con la URL.
+- Favoritos con estado React en memoria, sin persistencia local.
+- Detalle de experiencia, perfil simulado y navegación adaptable.
+- Cuadrícula responsive de tarjetas con descripción, destino, precio y valoración.
+
+## Stack
+
+- Next.js 16.4.6 con App Router
+- React 19.3.0 y TypeScript
+- Tailwind CSS 4.3.3
+- ESLint 9
+
+## Inicio rápido
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000). Para validar el proyecto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm lint
+pnpm exec tsc --noEmit
+pnpm build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design References
 
-## Learn More
+Las referencias de diseño son los materiales locales de [`VisualReference`](../VisualReference/descripcionTecnica.md), no una lista adicional de sitios externos. La auditoría de Smartbox informa la estructura del explorador, el filtrado y la anatomía de las tarjetas. Las capturas originales están aquí:
 
-To learn more about Next.js, take a look at the following resources:
+![Captura de referencia Smartbox](../VisualReference/www.smartbox.com_es_.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Segunda captura de referencia Smartbox](../VisualReference/www.smartbox.com_es_%20(1).png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+De estas referencias se toman la prioridad visual de la búsqueda y las categorías, una cuadrícula de experiencias fácil de recorrer y tarjetas con imagen, información resumida y valoración. La navegación móvil y los controles de filtro se adaptan al alcance de este MVP.
 
-## Deploy on Vercel
+## Documentación del proyecto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [CONTEXT.md](../CONTEXT.md): contexto y requisitos funcionales.
+- [SPECS.md](./SPECS.md): especificaciones detalladas y criterios de evaluación.
+- [PLAN.md](./PLAN.md): plan de trabajo.
+- [TASKS.md](./TASKS.md): seguimiento de tareas.
